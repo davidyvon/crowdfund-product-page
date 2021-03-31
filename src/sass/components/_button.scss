@@ -1,0 +1,174 @@
+// ------------------------------------------------------------
+//  BUTTON
+// ------------------------------------------------------------
+
+.button {
+	display: inline-block;
+	font-size: 1.4rem;
+	font-weight: $bold;
+	padding: 1.2rem 3.6rem 1.2rem 3.6rem;
+	border-radius: 4rem;
+	color: $white;
+	background: $primary;
+	transition: 0.3s ease;
+	cursor: pointer;
+
+	@include media-sm {
+		font-size: 1.6rem;
+		padding: 1.8rem 4.2rem 1.8rem 4.2rem;
+	}
+
+	&:hover,
+	&:active {
+		background: $primary_dark;
+	}
+}
+
+.button--support {
+	margin-right: 1rem;
+
+	@include media-sm {
+		margin-right: 0;
+	}
+}
+
+.button--payout {
+	padding: 1.8rem 2.4rem 1.8rem 2.4rem;
+}
+
+.button--disabled {
+	background-color: $gray;
+
+	&:hover,
+	&:active {
+		background: $gray;
+	}
+}
+
+// ------------------------------------------------------------
+//  TOGGLE
+// ------------------------------------------------------------
+
+.toggle {
+	@include media-lg {
+		position: relative;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		height: 5.6rem;
+		width: 18rem;
+		font-size: 1.6rem;
+		font-weight: $bold;
+		color: $gray;
+		padding: 0 2.8rem 0 4.2rem;
+		border-radius: 4rem;
+		background: hsla(0deg, 0%, 0%, 0.1);
+		transition: 0.3s ease;
+		cursor: pointer;
+
+		&.active {
+			color: $primary-dark;
+			padding: 0 1.8rem 0 4.2rem;
+			background-color: hsla(176deg, 72%, 28%, 0.1);
+			opacity: 1;
+		}
+
+		&:hover {
+			opacity: 0.8;
+		}
+	}
+}
+
+.toggle__text {
+	display: none;
+
+	@include media-lg {
+		display: block;
+	}
+}
+
+.toggle__icon--bookmark {
+	height: 5.6rem;
+	width: 5.6rem;
+	cursor: pointer;
+
+	@include media-lg {
+		position: absolute;
+		left: 0;
+	}
+}
+
+// ------------------------------------------------------------
+//  RADIO BUTTON
+// ------------------------------------------------------------
+
+.radio-button {
+	position: relative;
+	display: block;
+	margin-top: 0.5rem;
+	user-select: none;
+	cursor: pointer;
+}
+
+.radio-button__checkbox {
+	position: absolute;
+	opacity: 0;
+
+	&:checked ~ .radio-button__checkmark {
+		&::after {
+			content: '';
+			position: absolute;
+			top: 5px;
+			left: 5px;
+			width: 12px;
+			height: 12px;
+			border-radius: 30px;
+			background-color: $primary;
+		}
+	}
+}
+
+.radio-button__checkmark {
+	position: absolute;
+	height: 24px;
+	width: 24px;
+	background-color: $white;
+	border-radius: 50%;
+	border: 1px solid hsla(0deg, 0%, 0%, 0.2);
+	transition: border 0.3s ease;
+
+	&:hover {
+		border: 1px solid $primary;
+	}
+}
+
+// ------------------------------------------------------------
+//  INPUT
+// ------------------------------------------------------------
+
+.payout__amount {
+	position: relative;
+	display: inline-block;
+	font-size: 1.6rem;
+	font-weight: $bold;
+	height: 100%;
+	width: 12rem;
+	padding-left: 4rem;
+	margin-right: 2rem;
+	border: 1px solid hsla(0deg, 0%, 0%, 0.2);
+	border-radius: 4rem;
+	color: $black;
+	caret-color: $primary;
+	background-color: $white;
+	transition: 0.3s ease;
+	cursor: pointer;
+
+	&::placeholder {
+		color: $black;
+	}
+
+	&:hover,
+	&:active {
+		border: 1px solid $primary;
+	}
+}

@@ -1,0 +1,78 @@
+// ------------------------------------------------------------
+//  VARIABLES
+// ------------------------------------------------------------
+
+$primary: hsl(176deg, 50%, 47%);
+$primary_dark: hsl(176deg, 72%, 28%);
+
+$black: hsl(0deg, 0%, 0%);
+$gray: hsl(0deg, 0%, 48%);
+$white: hsl(360deg, 100%, 100%);
+
+$regular: 400;
+$medium: 500;
+$bold: 700;
+
+// ------------------------------------------------------------
+//  MIXINS
+// ------------------------------------------------------------
+
+// Small devices (landscape phones, 576px and up)
+$screen-sm: 576px;
+@mixin media-sm {
+	@media (min-width: #{$screen-sm}) {
+		@content;
+	}
+}
+
+// Large devices (desktops, 992px and up)
+$screen-lg: 992px;
+@mixin media-lg {
+	@media (min-width: #{$screen-lg}) {
+		@content;
+	}
+}
+
+// ------------------------------------------------------------
+//  RESET
+// ------------------------------------------------------------
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+// ------------------------------------------------------------
+//  TYPOGRAPHY
+// ------------------------------------------------------------
+
+html {
+	font-size: 62.5%;
+	font-family: 'Commissioner', sans-serif;
+}
+
+body {
+	font-size: 1.6rem;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	outline: none;
+}
+
+input {
+	text-decoration: none;
+	outline: none;
+}
+
+button {
+	outline: none;
+	border: none;
+}

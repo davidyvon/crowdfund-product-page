@@ -1,0 +1,137 @@
+// ------------------------------------------------------------
+//  HEADER
+// ------------------------------------------------------------
+
+.header {
+	position: relative;
+	height: 30rem;
+	padding: 3.4rem 2.4rem;
+	display: flex;
+	justify-content: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-image: url('/src/assets/images/image-hero-mobile.jpg');
+
+	@include media-lg {
+		height: 40rem;
+		padding: 4.4rem 16rem;
+		background-image: url('/src/assets/images/image-hero-desktop.jpg');
+	}
+}
+
+.logo {
+	position: relative;
+	z-index: 1;
+	margin-right: auto;
+}
+
+// ------------------------------------------------------------
+//  MENU
+// ------------------------------------------------------------
+
+.menu {
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+
+	@include media-lg {
+		display: none;
+	}
+}
+
+.menu__hamburger {
+	display: block;
+
+	&.active {
+		display: none;
+	}
+}
+
+.menu__close {
+	display: none;
+
+	&.active {
+		display: block;
+	}
+}
+
+// ------------------------------------------------------------
+//  NAV
+// ------------------------------------------------------------
+
+.nav {
+	position: absolute;
+	z-index: 1;
+	top: 9rem;
+	left: 2.4rem;
+	right: 2.4rem;
+	border-radius: 1.6rem;
+	background: $white;
+	display: none;
+
+	&.active {
+		display: block;
+	}
+
+	@include media-lg {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: auto;
+		background-color: transparent;
+		display: block;
+	}
+}
+
+.nav__list {
+	display: flex;
+	flex-direction: column;
+
+	@include media-lg {
+		flex-direction: row;
+	}
+}
+
+.nav__item {
+	padding: 2.4rem;
+
+	&:nth-child(2) {
+		border-top: 1px solid hsla(0deg, 0%, 0%, 0.1);
+		border-bottom: 1px solid hsla(0deg, 0%, 0%, 0.1);
+	}
+
+	@include media-lg {
+		padding: 0;
+
+		&:nth-child(2) {
+			border-top: none;
+			border-bottom: none;
+		}
+
+		&:not(:last-child) {
+			margin-right: 4.4rem;
+		}
+	}
+}
+
+.nav__link {
+	font-size: 1.6rem;
+	font-weight: $medium;
+	color: $black;
+	transition: color 0.3s ease;
+
+	&:hover,
+	&:active {
+		color: $primary;
+	}
+
+	@include media-lg {
+		color: $white;
+
+		&:hover,
+		&:active {
+			color: $white;
+		}
+	}
+}

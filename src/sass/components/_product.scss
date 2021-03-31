@@ -1,0 +1,362 @@
+// ------------------------------------------------------------
+//  PRODUCTS
+// ------------------------------------------------------------
+
+.product {
+	position: relative;
+	border: 1px solid hsla(0deg, 0%, 0%, 0.2);
+	border-radius: 0.6rem;
+	padding: 2.4rem;
+
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+
+	&--disabled::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.6;
+		background-color: $white;
+	}
+
+	@include media-lg {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		grid-template-rows: repeat(3, auto);
+	}
+}
+
+.product__heading {
+	font-size: 1.4rem;
+	font-weight: $bold;
+	margin-bottom: 0.8rem;
+
+	@include media-lg {
+		grid-column: 1;
+		grid-row: 1;
+	}
+}
+
+.product__pricing {
+	font-weight: $medium;
+	margin-bottom: 2.4rem;
+	color: $primary;
+
+	@include media-lg {
+		grid-column: 2;
+		grid-row: 1;
+		justify-self: end;
+	}
+}
+
+.product__description {
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	margin-bottom: 2.4rem;
+	color: $gray;
+
+	@include media-lg {
+		font-size: 1.6rem;
+		line-height: 3rem;
+
+		grid-column: 1 / -1;
+		grid-row: 2;
+	}
+}
+
+.product__quantity {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 3rem;
+	font-weight: $bold;
+	margin-bottom: 3rem;
+
+	@include media-lg {
+		grid-column: 1;
+		grid-row: 3;
+		margin-bottom: 0;
+	}
+}
+
+.product__quantity-info {
+	font-size: 1.6rem;
+	font-weight: $regular;
+	padding-left: 0.8rem;
+	color: $gray;
+}
+
+// ------------------------------------------------------------
+//  PRODUCTS - PLEDGE
+// ------------------------------------------------------------
+
+.products-pledge {
+	padding: 2.4rem;
+	margin: 20rem auto 20rem auto;
+	background-color: $white;
+	border-radius: 0.6rem;
+	width: calc(100% - 4.8rem);
+
+	@include media-lg {
+		padding: 4rem;
+		width: 50vw;
+	}
+}
+
+.products-pledge__content {
+	display: flex;
+	flex-direction: column;
+}
+
+.products-pledge__menu {
+	align-self: flex-end;
+	margin-bottom: 0.4rem;
+	height: 1.8rem;
+	width: 1.8rem;
+	opacity: 0.5;
+	transition: opacity 0.3s ease;
+
+	&:hover,
+	&:active {
+		cursor: pointer;
+		opacity: 1;
+	}
+}
+
+.products-pledge__heading {
+	font-size: 2.4rem;
+	font-weight: $bold;
+	margin-bottom: 1.4rem;
+}
+
+.products-pledge__description {
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	margin-bottom: 3rem;
+	color: $gray;
+
+	@include media-lg {
+		font-size: 1.6rem;
+		line-height: 3rem;
+	}
+}
+
+// ------------------------------------------------------------
+//  PLEDGE
+// ------------------------------------------------------------
+
+.pledge {
+	position: relative;
+	border-radius: 0.6rem;
+	border: 1px solid hsla(0deg, 0%, 0%, 0.2);
+
+	&:not(:last-child) {
+		margin-bottom: 2.4rem;
+	}
+
+	&.active {
+		border-color: transparent;
+		box-shadow: 0 0 0 2px $primary;
+	}
+
+	&--disabled::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		opacity: 0.6;
+		background-color: $white;
+	}
+}
+
+.pledge__content {
+	display: grid;
+	grid-template-columns: 3.8rem auto auto;
+	grid-template-rows: 3rem auto auto;
+	padding: 3rem 2.4rem;
+}
+
+.radio__button {
+	grid-column: 1;
+	grid-row: 1;
+	align-self: center;
+}
+
+.pledge__heading {
+	display: flex;
+	flex-direction: column;
+	align-self: center;
+
+	grid-column: 2 / -1;
+	grid-row: 1;
+
+	font-size: 1.6rem;
+	font-weight: $bold;
+	transition: color 0.3s ease;
+
+	&:hover,
+	&:active {
+		color: $primary;
+		cursor: pointer;
+	}
+
+	@include media-lg {
+		flex-direction: row;
+	}
+}
+
+.pledge__pricing {
+	font-weight: $medium;
+	color: $primary;
+	margin-top: 0.8rem;
+
+	grid-column: 2 / -1;
+	grid-row: 1;
+
+	@include media-lg {
+		margin: 0 0 0 2rem;
+	}
+}
+
+.pledge__quantity {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	font-size: 2.4rem;
+	font-weight: $bold;
+
+	grid-column: 1 / -1;
+	grid-row: 3;
+
+	@include media-lg {
+		grid-column: 3;
+		grid-row: 1;
+	}
+}
+
+.pledge__quantity-info {
+	font-size: 1.6rem;
+	font-weight: $regular;
+	padding-left: 0.8rem;
+	color: $gray;
+}
+
+.pledge__description {
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	margin-bottom: 2.4rem;
+	color: $gray;
+	margin-top: 2rem;
+
+	grid-column: 1 / -1;
+	grid-row: 2;
+
+	@include media-lg {
+		font-size: 1.6rem;
+		line-height: 3rem;
+		margin-bottom: 0rem;
+
+		grid-column: 2 / -1;
+		grid-row: 2;
+	}
+}
+
+// ------------------------------------------------------------
+//  PAYOUT
+// ------------------------------------------------------------
+
+.payout {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding: 3rem 2.4rem;
+	transition: 0.3s ease;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 1px;
+		background-color: hsla(0deg, 0%, 0%, 0.1);
+	}
+
+	@include media-lg {
+		flex-direction: row;
+	}
+}
+
+.payout__info {
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	color: $gray;
+	text-align: center;
+	margin-bottom: 2rem;
+
+	@include media-lg {
+		font-size: 1.6rem;
+		line-height: 3rem;
+		margin-bottom: 0;
+	}
+}
+
+.payout__input {
+	display: flex;
+	justify-content: space-between;
+}
+
+.payout__input-container {
+	position: relative;
+}
+
+.payout__devise-symbol {
+	position: absolute;
+	top: 1.6rem;
+	left: 2rem;
+
+	color: hsla(0deg, 0%, 0%, 0.2);
+	font-weight: $bold;
+}
+
+// ------------------------------------------------------------
+//  CONFIRM
+// ------------------------------------------------------------
+
+.confirm {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 40rem;
+	padding: 3rem 2.4rem;
+	border-radius: 0.6rem;
+	background-color: $white;
+}
+
+.confirm__icon {
+	margin-bottom: 3rem;
+}
+
+.confirm__heading {
+	font-size: 1.6rem;
+	font-weight: $bold;
+	margin-bottom: 1.2rem;
+}
+
+.confirm__description {
+	font-size: 1.4rem;
+	line-height: 2.6rem;
+	margin-bottom: 2.4rem;
+	color: $gray;
+}
